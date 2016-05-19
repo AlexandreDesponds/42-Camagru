@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salut</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet'
+          type='text/css'>
+    {#SCRIPT}
+</head>
+<body>
+<div class="container-fluid">
+    <header class="row">
+        <div class="col-l-4 col-m-12 col-s-12 logo">
+            <a href="/"><img src="/img/camagru.png" alt=""></a>
+        </div>
+        <div class="col-l-4 col-m-8 col-s-12 menu">
+            <a href="/selfie">TAKE A SELFIE</a> |
+            <a href="/">PARCOURIR</a>
+        </div>
+        <div class="col-l-4 col-m-4 col-s-12 login">
+            {%IF session.people}<a href="/logout">Déconnexion</a>{%END}
+            {%IFN session.people}<a href="/register">Inscription</a> | <a href="/login">Connexion</a>{%END}
+        </div>
+    </header>
+    <div class="container">
+        {%IF session.success}<div class="success">{{session.success}}</div>{%END}
+        {%IF session.error}<div class="error">{{session.error}}</div>{%END}
+        {#BODY}
+    </div>
+    <footer class="row">
+        developpé par <a href="http://www.github.com/miniponps" target="_blank">adespond@42</a>
+    </footer>
+</div>
+</body>
+</html>

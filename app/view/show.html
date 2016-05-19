@@ -1,0 +1,31 @@
+{TEMPLATE}template/template{END}
+{#SCRIPT}{#END}
+{#BODY}
+<div class="row">
+    <div class="col-l-12 col-m-12 col-s-12 selfie-show">
+        <h2>Par {{pseudo}}</h2>
+        <img src="/img/selfie/{{name}}.png" alt="">
+        <a href="like?id={{name}}"><img src="/img/like.png" class="like{%IF isLike} like-active{%END}"></a>
+        <div class="count-like">{{countLike}}</div>
+    </div>
+</div>
+<div class="row">
+    <h2>Commentaires</h2>
+    {%IF comments}
+        {*FOR comments AS c}
+            <div class="comment">
+                {{c.display}}
+            </div>
+        {*END}
+    {%END}
+    {%IFN comments}
+        <p>Pas de commentaire</p>
+    {%END}
+    <h2>Poster un commentaire</h2>
+    <form action="" method="post">
+        <textarea name="message" cols="30">{%IF post.message}{{post.message}}{%END}</textarea>
+        {%IF error.message}<p class="error">{{error.message}}</p>{%END}
+        <button type="submit">Envoyer</button>
+    </form>
+</div>
+{#END}

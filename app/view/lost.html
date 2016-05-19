@@ -1,0 +1,13 @@
+{TEMPLATE}template/template2{END}
+{#BODY}
+<div class="reg-log">
+    <div class="circle"></div>
+    <h1>Oublie du mot de passe</h1>
+    <form action="lost" method="POST">
+        <input type="text" name="pseudo" placeholder="Ton pseudo">
+        <input type="text" name="email" placeholder="Ton email">
+        <button type="submit" class="btn btn-default">Oublie de mon mot de passe</button>
+        <p>Tu n'es pas encore inscrit ? <a href="/register">Inscris toi</a></p>
+    </form>
+</div>
+{#END}

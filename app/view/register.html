@@ -1,0 +1,21 @@
+{TEMPLATE}template/template2{END}
+{#BODY}
+<div class="reg-log">
+    <div class="circle"></div>
+    <h1>Inscription</h1>
+    <form action="register" method="POST">
+        <input type="text" name="pseudo" placeholder="Ton pseudo" class="{%IF error.pseudo}error{%END}"
+               value="{%IF post.pseudo}{{post.pseudo}}{%END}">
+        {%IF error.pseudo}<p class="error">{{error.pseudo}}</p>{%END}
+        <input type="text" name="email" placeholder="Ton email" class="{%IF error.email}error{%END}"
+               value="{%IF post.pseudo}{{post.email}}{%END}">
+        {%IF error.email}<p class="error">{{error.email}}</p>{%END}
+        <input type="password" name="password" placeholder="Ton mot de passe" class="{%IF error.password}error{%END}">
+        {%IF error.password}<p class="error">{{error.password}}</p>{%END}
+        <input type="password" name="password2" placeholder="Retape ton mot de passe"
+               class="{%IF error.password}error{%END}">
+        <button type="submit" class="btn btn-default">Je m'inscris</button>
+        <p>Tu es déjà inscrit ? <a href="/login">Connecte-toi</a></p>
+    </form>
+</div>
+{#END}
